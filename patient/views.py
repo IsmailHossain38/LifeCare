@@ -13,12 +13,17 @@ from rest_framework.authtoken.models import Token
 # for sending email
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
+# from rest_framework import filters
 from django.shortcuts import redirect
+
+
+
 
 
 class PatientViewset(viewsets.ModelViewSet):
     queryset = models.Patient.objects.all()
     serializer_class = serializers.PatientSerializer
+    
 
 class UserRegistrationApiView(APIView):
     serializer_class = serializers.RegistrationSerializer
